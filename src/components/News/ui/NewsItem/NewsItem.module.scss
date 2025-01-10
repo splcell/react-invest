@@ -1,0 +1,84 @@
+body[data-theme="light"] {
+  --content-text-color: var(--secondary-black);
+  --ticker-bg: var(--primary-black);
+  --hover-ticker-bg: var(--primary-yellow);
+  --ticker-color: var(--white);
+  --hover-ticker-text: var(--primary-black);
+}
+
+body[data-theme="dark"] {
+  --content-text-color: var(--white);
+  --ticker-bg: var(--primary-yellow);
+  --hover-ticker-bg: var(--primary-black);
+  --ticker-color: var(--primary-black);
+  --hover-ticker-color: var(--white);
+}
+
+.newsWrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.newsItemLink {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--content-text-color);
+}
+
+.newsTickers {
+  display: flex;
+  column-gap: 7px;
+}
+
+.newsTicker {
+  display: block;
+  background: var(--ticker-bg);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ticker-color);
+  padding: 0 7px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.3s all;
+
+  &:hover {
+    background: var(--hover-ticker-bg);
+    color: var(--hover-ticker-color);
+  }
+}
+
+.sentimentBox {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  margin-bottom: 10px;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.sentimentTitle,
+.sentimentNeutral {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--content-text-color);
+}
+
+.sentimentLabel {
+  font-weight: 600;
+}
+
+.sentimentNeutral {
+  font-size: 15px;
+}
+
+.newsDate {
+  width: max-content;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--content-text-color);
+}

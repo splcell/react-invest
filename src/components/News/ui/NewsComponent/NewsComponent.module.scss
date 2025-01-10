@@ -1,0 +1,48 @@
+:global {
+  body[data-theme="light"] {
+    --tab-color: var(--primary-black);
+    --tab-text-color: var(--primary-black);
+    --tab-selected-color: var(--white);
+    --tabs-box-bg: var(--white)
+  }
+
+  body[data-theme="dark"] {
+    --tab-color: var(--main-bg);
+    --tab-text-color: var(--white);
+    --tab-selected-color: var(--primary-black);
+    --tabs-box-bg: var(--black-bg)
+  }
+  .react-tabs__tab--selected {
+    background: var(--tab-color);
+    color: var(--tab-selected-color) !important;
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 0 10px;
+    border: none;
+    outline: none;
+  }
+}
+
+.newsTabs {
+  position: sticky;
+  top: 60px;
+  background: var(--tabs-box-bg);
+  padding: 10px;
+  max-width: 640px;
+  display: flex;
+  column-gap: 15px;
+  margin-top: 30px;
+  font-size: 15px;
+}
+
+.newsContent {
+  max-width: 640px;
+}
+
+.newsTab {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  color: var(--tab-text-color);
+  cursor: pointer;
+}

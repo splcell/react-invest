@@ -1,0 +1,11 @@
+.containerInner{
+  display: flex;
+  column-gap: 70px;
+}
+
+.containerInfo{
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  margin-top: 18px;
+}

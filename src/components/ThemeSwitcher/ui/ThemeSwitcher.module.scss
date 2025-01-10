@@ -1,0 +1,16 @@
+:global{
+  body[data-theme='light']{
+      --switcher-color: var(--primary-black);
+      --switcher-color-hover: var(--secondary-black);
+  }
+
+  body[data-theme='dark']{
+      --switcher-color: var(--white);
+      --switcher-color-hover: var(--light-gray);
+  }
+}
+
+.icon{
+  fill: var(--switcher-color);
+  cursor: pointer;
+}

@@ -1,0 +1,23 @@
+:global {
+  body[data-theme="light"] {
+    --search-color: var(--white);
+    --search-border: none;
+  }
+
+  body[data-theme="dark"] {
+    --search-color: var(--white);
+    --search-border: 1px solid var(--secondary-black)
+  }
+}
+
+
+.search {
+  width: 630px;
+  background: var(--search-color);
+  margin-right: 250px;
+  border-radius: 5px;
+  padding: 3px 10px;
+  border: var(--search-border);
+  font-size: 14px;
+  color: var(--secondary-black);
+}
