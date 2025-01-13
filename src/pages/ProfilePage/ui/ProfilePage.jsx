@@ -6,6 +6,8 @@ import { MarketInfo } from "../../../components/MarketInfo/ui/MarketInfo";
 import { CompanyChart } from "../../../components/CompanyChart/ui/CompanyChart";
 import { useGetCurrentQuoteQuery } from "../../../redux/investmentsApi";
 import { Minmax } from "../../../components/Minmax/ui/Minmax";
+import { Description } from "../../../components/Description/ui/Description";
+import { Reports } from "../../../components/Reports";
 
 export const ProfilePage = () => {
   const { ticker } = useParams();
@@ -23,8 +25,11 @@ export const ProfilePage = () => {
           <MarketInfo profile={profile} data={quotedata}/>
           <CompanyChart profile={profile} ticker={ticker}/>
           <Minmax profile={profile} metrics={metrics}/>
+          <Reports ticker={ticker} profile={profile}/>
         </div>
-        <div></div>
+        <div>
+          <Description profile={profile}/>
+        </div>
       </div>
     </Container>
   );

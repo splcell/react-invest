@@ -1,0 +1,75 @@
+.profileListItem{
+  display: flex;
+  justify-content: space-between;
+  border-top: var(--border);
+  font-size: 15px;
+  padding: 8px 0;
+
+  span{
+    &:last-child{
+      max-width: 150px;
+      font-weight: 600;
+      text-align: right;
+    }
+  }
+
+  a{
+    display: flex;
+    column-gap: 5px;
+    color: var(--primary-black);
+    font-weight: 600;
+  }
+}
+
+.rating{
+  padding: 0 10px;
+  border-radius: 8px;
+}
+
+.neutral{
+  background: #cccccc;
+}
+
+.buy{
+  background: var(--positive-color);
+  color: var(--white);
+}
+
+.sell{
+  background: var(--negative-color);
+  color: var(--white);
+}
+
+.overallWrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  row-gap: 7px;
+}
+
+.overallTitle{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.finalRating{
+  font-size: 20px;
+  padding: 30px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.finalNeutral{
+  background: #cccccc;
+}
+
+.finalBuy{
+  background: var(--positive-bg);
+  color: var(--positive-color);
+}
+
+.finalSell{
+  background: var(--negative-bg);
+  color: var(--negative-color);
+}

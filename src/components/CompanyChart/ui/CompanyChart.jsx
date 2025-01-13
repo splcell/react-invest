@@ -87,8 +87,6 @@ export const CompanyChart = ({ profile, ticker }) => {
     }
   }, [ticker]);
 
-  console.log(chartData, 'chartdata')
-
   return (
     <HighchartsReact
       highcharts={Highcharts}
