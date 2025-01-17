@@ -6,7 +6,7 @@ export const Chart = ({
   chartData2,
   categories,
   text,
-  text2 = "",
+  text2 = 'Centered',
   type = "area",
   color = ["#EFAF0A"],
   width = 1370,
@@ -15,6 +15,7 @@ export const Chart = ({
   navigatorStatus = true,
   scrollBarStatus = true,
   pointWidth,
+  
   legend = true,
 }) => {
   const options = {

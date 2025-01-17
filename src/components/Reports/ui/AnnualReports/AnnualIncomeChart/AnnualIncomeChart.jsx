@@ -13,11 +13,11 @@ export const AnnualIncomeChart = ({income, profile}) => {
         const newChartData2 = [];
         const newCategories = [];
         for (let i = 0; i < income.length; i++) {
-            const revenue = Number(Number(income[i].financials?.income_statement?.revenue) / 1000000);
-            const netIncome = Number(income[i].financials?.income_statement?.net_income_loss) / 1000000;
+            const revenue = Number(Number(income[i]?.financials?.income_statement?.revenues?.value) / 1000000);
+            const netIncome = Number(income[i]?.financials?.income_statement?.net_income_loss?.value) / 1000000;
             newChartData.unshift(revenue);
             newChartData2.unshift(netIncome);
-            newCategories.unshift(new Date(income[i].calendarYear).getFullYear());
+            newCategories.unshift(new Date(income[i].fiscal_year).getFullYear());
         }
 
         setAnnualRevenue(newChartData);

@@ -4,12 +4,12 @@ import { ContentBox } from "../../ContentBox";
 import styles from "./Description.module.scss";
 import { ProfileList } from "../../ProfileList/ui/ProfileList";
 
-export const Description = ({ profile }) => {
+export const Description = ({ profile, isLoading, isError }) => {
   const [isFull, setIsFull] = useState(false);
 
-  const toggleDescriptionHandler =() => {
-    setIsFull(!isFull)
-  }
+  const toggleDescriptionHandler = () => {
+    setIsFull(!isFull);
+  };
 
   return (
     <ContentBox className={styles.profileContent} title="Company Overview">
@@ -20,7 +20,7 @@ export const Description = ({ profile }) => {
       ) : (
         <p className={styles.description}>{profile.description}</p>
       )}
-       {profile.description?.length > 300 ? (
+      {profile.description?.length > 300 ? (
         <span
           className={styles.toggleDescription}
           onClick={toggleDescriptionHandler}
@@ -28,7 +28,7 @@ export const Description = ({ profile }) => {
           <IoChevronDownOutline className={isFull ? styles.rotate : ""} />
         </span>
       ) : null}
-      <ProfileList profile={profile}/>
+      <ProfileList profile={profile} isLoading={isLoading} isError={isError} />
     </ContentBox>
   );
 };

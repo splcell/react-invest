@@ -5,12 +5,17 @@ import { checkProps } from "../../../helpers/checkProps";
 import { convertData } from "../../../helpers/convertData";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { ContentWrapper } from "../../ContentWrapper/ui/ContentWrapper";
 
-export const ProfileList = ({ profile, ratios, rating }) => {
+export const ProfileList = ({ profile, ratios, rating, isLoading, isError }) => {
   const variantListRender = useMemo(() => {
     if (profile) {
       return (
-        <>
+        <ContentWrapper
+          isLoading={isLoading}
+          isError={isError}
+          errorText='Info not Found'
+        >
           <li className={styles.profileListItem}>
             <span>Company name:</span>
             <span>{profile.companyName}</span>
@@ -72,13 +77,17 @@ export const ProfileList = ({ profile, ratios, rating }) => {
               Open
             </Link>
           </li>
-        </>
+        </ContentWrapper>
       );
     }
 
     if (Array.isArray(ratios) && ratios.length) {
       return (
-        <>
+        <ContentWrapper
+          isLoading={isLoading}
+          isError={isError}
+          errorText='Ratios not Found'
+        >
           {ratios.map((ratio, index) => (
             <>
               <li className={styles.profileListItem} key={index}>
@@ -157,7 +166,7 @@ export const ProfileList = ({ profile, ratios, rating }) => {
               </li>
             </>
           ))}
-        </>
+        </ContentWrapper>
       );
     }
 

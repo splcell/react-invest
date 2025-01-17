@@ -357,8 +357,8 @@ export const ReportsData = memo(({ report, reportType, period, profile }) => {
               {tableData[key] && tableData[key].length > 1 ? (
                 <tr key={key}>
                   <td title={key.length > 30 && key}>
-                  {key.length > 30 ? key.slice(0, 30) + "..." : key}
-                </td>
+                    {key.length > 30 ? key.slice(0, 30) + "..." : key}
+                  </td>
                   {tableData[key].map((item, index) => (
                     <>
                       <td align="center" key={index}>

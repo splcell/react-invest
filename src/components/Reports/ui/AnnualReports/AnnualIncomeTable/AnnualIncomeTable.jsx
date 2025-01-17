@@ -1,14 +1,14 @@
 import { createTableData } from "../../../../../helpers/createTableData";
 import { ReportsData } from "../../ReportsData/ReportsData";
 
-export const QuarterlyBalanceTable = ({balance, profile}) => {
-  const tableData = createTableData(balance);
+export const AnnualIncomeTable = ({ income, profile }) => {
+  const tableData = createTableData(income);
 
   return (
     <ReportsData
-      period="quarterly"
+      period="annual"
       report={tableData}
-      reportType="Balance"
+      reportType="Income"
       profile={profile}
     />
   );

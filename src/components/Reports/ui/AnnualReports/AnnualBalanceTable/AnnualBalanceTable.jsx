@@ -1,7 +1,8 @@
+import { createTableData } from "../../../../../helpers/createTableData";
 import { ReportsData } from "../../ReportsData/ReportsData";
 
 export const AnnualBalanceTable = ({ balance, profile }) => {
-  const tableData = balance ? [...balance.results].reverse() : [];
+  const tableData = createTableData(balance)
 
   return (
     <ReportsData

@@ -21,6 +21,9 @@ export const investmentsApi = createApi({
     getChartData: build.query({
       query: ({ ticker }) =>
         `historical-price-full/${ticker}?serietype=line&apikey=${investmentsKey}`,
+    }),
+    getKeyRatios: build.query({
+      query: ({ticker}) => `ratios-ttm/${ticker}?apikey=${investmentsKey}`
     })
   }),
 });
@@ -30,4 +33,6 @@ export const {
   useLazyGetChartDataQuery,
   useGetProfileQuery,
   useGetCurrentQuoteQuery,
+  useGetKeyRatiosQuery
 } = investmentsApi;
+

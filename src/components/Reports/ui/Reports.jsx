@@ -1,4 +1,3 @@
-
 import { ContentBox } from "../../ContentBox";
 import styles from "./Reports.module.scss";
 import { Accordion, AccordionItem } from "@szhsin/react-accordion";
@@ -10,15 +9,25 @@ import { QuarterlyBalanceChart } from "./QuarterlyReports/QuarterlyBalanceChart/
 import { QuarterlyBalanceTable } from "./QuarterlyReports/QuarterlyBalanceTable/QuarterlyBalanceTable";
 import { useGetReportsQuery } from "../../../redux/reportsApi";
 import { AnnualIncomeChart } from "./AnnualReports/AnnualIncomeChart/AnnualIncomeChart";
+import { AnnualIncomeTable } from "./AnnualReports/AnnualIncomeTable/AnnualIncomeTable";
+import { QuarterlyIncomeChart } from "./QuarterlyReports/QuarterlyIncomeChart/QuarterlyIncomeChart";
+import { QuarterlyIncomeTable } from "./QuarterlyReports/QuarterlyIncomeTable/QuarterlyIncomeTable";
+import { AnnualCashFlowChart } from "./AnnualReports/AnnualCashFlowChart/AnnualCashFlowChart";
+import { AnnualCashFlowTable } from "./AnnualReports/AnnualCashFlowTable/AnnualCashFlowTable";
+import { QuarterlyCashFlowChart } from "./QuarterlyReports/QuarterlyCashFlowChart/QuarterlyCashFlowChart";
+import { QuarterlyCashFlowTable } from "./QuarterlyReports/QuarterlyCashFlowTable/QuarterlyCashFlowTable";
 
 export const Reports = ({ ticker, profile }) => {
-  const {data: annualData} = useGetReportsQuery({ticker, period: 'annual'})
-  const {data: quarterlyData} = useGetReportsQuery({ticker, period: 'quarterly'})
+  const { data: annualData } = useGetReportsQuery({ ticker, period: "annual" });
+  const { data: quarterlyData } = useGetReportsQuery({
+    ticker,
+    period: "quarterly",
+  });
 
-  console.log(annualData, 'reportsData')
+  console.log(annualData, "reportsData");
 
   return (
-    <ContentBox title="Financials Results" className={styles.reportsWrapper}>
+    <ContentBox title="Financial Results" className={styles.reportsWrapper}>
       <Accordion>
         <AccordionItem
           header={
@@ -37,7 +46,10 @@ export const Reports = ({ ticker, profile }) => {
             </TabList>
             <TabPanel>
               <div className={styles.chartWrapper}>
-                <AnnualBalanceChart balance={annualData?.results} profile={profile} />
+                <AnnualBalanceChart
+                  balance={annualData?.results}
+                  profile={profile}
+                />
               </div>
               <div className={styles.tableWrapper}>
                 <AnnualBalanceTable balance={annualData} profile={profile} />
@@ -52,7 +64,7 @@ export const Reports = ({ ticker, profile }) => {
               </div>
               <div className={styles.tableWrapper}>
                 <QuarterlyBalanceTable
-                  balance={quarterlyData?.results}
+                  balance={quarterlyData}
                   profile={profile}
                 />
               </div>
@@ -75,17 +87,28 @@ export const Reports = ({ ticker, profile }) => {
             </TabList>
             <TabPanel>
               <div className={styles.chartWrapper}>
-                <AnnualIncomeChart income={annualData?.results} profile={profile}/>
+                <AnnualIncomeChart
+                  income={annualData?.results}
+                  profile={profile}
+                />
               </div>
-              {/* <div className={styles.tableWrapper}>
-                <AnnualIncomeTable />
-              </div> */}
+              <div className={styles.tableWrapper}>
+                <AnnualIncomeTable profile={profile} income={annualData} />
+              </div>
             </TabPanel>
             <TabPanel>
-              {/* <div className={styles.chartWrapper}>
-                <QuarterlyIncomeChart />
-              </div> */}
-              <div className={styles.tableWrapper}></div>
+              <div className={styles.chartWrapper}>
+                <QuarterlyIncomeChart
+                  income={quarterlyData?.results}
+                  profile={profile}
+                />
+              </div>
+              <div className={styles.tableWrapper}>
+                <QuarterlyIncomeTable
+                  income={quarterlyData}
+                  profile={profile}
+                />
+              </div>
             </TabPanel>
           </Tabs>
         </AccordionItem>
@@ -103,22 +126,31 @@ export const Reports = ({ ticker, profile }) => {
               <Tab className={styles.reportsTab}>Annual</Tab>
               <Tab className={styles.reportsTab}>Quarterly</Tab>
             </TabList>
-            {/* <TabPanel>
+            <TabPanel>
               <div className={styles.chartWrapper}>
-                <AnnualCashFlowChart />
+                <AnnualCashFlowChart
+                  cashFlow={annualData?.results}
+                  profile={profile}
+                />
               </div>
               <div className={styles.tableWrapper}>
-                <AnnualCashFlowTable />
+                <AnnualCashFlowTable cashFlow={annualData} profile={profile} />
               </div>
             </TabPanel>
             <TabPanel>
               <div className={styles.chartWrapper}>
-                <QuarterlyCashFlowChart />
+                <QuarterlyCashFlowChart
+                  cashFlow={quarterlyData?.results}
+                  profile={profile}
+                />
               </div>
               <div className={styles.tableWrapper}>
-                <QuarterlyCashFlowTable />
+                <QuarterlyCashFlowTable
+                  cashFlow={quarterlyData}
+                  profile={profile}
+                />
               </div>
-            </TabPanel> */}
+            </TabPanel>
           </Tabs>
         </AccordionItem>
       </Accordion>
