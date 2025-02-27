@@ -4,7 +4,7 @@ Investments - это информационно-аналитический по�
 
 ## Технологии
 
-**Frontend:** React, RTK-Query, Javascript, Storybook, Highcharts, Webpack
+**Frontend:** React, RTK-Query, Javascript, Highcharts, Webpack
 
 **API:** Financial Modeling Prep, Alpha Vantage, Polygon
 
