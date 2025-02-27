@@ -1,0 +1,44 @@
+:global {
+  body[data-theme="light"] {
+    --market-text-color: var(--primary-black);
+  }
+
+  body[data-theme="dark"] {
+    --market-text-color: var(--white);
+  }
+}
+
+.marketTitle {
+  width: max-content;
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 50px;
+  color: var(--market-text-color);
+}
+
+.sectorsWrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 56px;
+}
+
+.sector {
+  height: 102px;
+  border: 1px solid var(--primary-black);
+  font-size: 27px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 4px;
+  transition: .5s all;
+  cursor: pointer;
+  color: var(--market-text-color);
+  
+
+  &:hover{
+    background: var(--primary-yellow);
+    color: var(--white);
+    border: var(--border);
+    box-shadow: var(--shadow);
+  }
+}

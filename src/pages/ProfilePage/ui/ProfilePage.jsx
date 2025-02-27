@@ -9,6 +9,9 @@ import { Minmax } from "../../../components/Minmax/ui/Minmax";
 import { Description } from "../../../components/Description/ui/Description";
 import { Reports } from "../../../components/Reports";
 import { Ratios } from "../../../components/Ratios/ui/Ratios";
+import { Dividends } from "../../../components/Dividends/ui/Dividends";
+import { CompanyNews } from "../../../components/News";
+import { Rating } from "../../../components/Rating";
 
 export const ProfilePage = () => {
   const { ticker } = useParams();
@@ -25,6 +28,8 @@ export const ProfilePage = () => {
           <CompanyChart profile={profile} ticker={ticker} />
           <Minmax profile={profile} metrics={metrics} />
           <Reports ticker={ticker} profile={profile} />
+          <Dividends ticker={ticker} profile={profile}/>
+          <CompanyNews ticker={ticker}/>
         </div>
         <div className={styles.infoWrapper}>
           <Description
@@ -33,6 +38,7 @@ export const ProfilePage = () => {
             isError={isError}
           />
           <Ratios ticker={ticker}/>
+          <Rating ticker={ticker}/>
         </div>
       </div>
     </Container>

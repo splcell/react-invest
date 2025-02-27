@@ -183,12 +183,8 @@ export const ProfileList = ({ profile, ratios, rating, isLoading, isError }) => 
               className={cn(styles.rating, {
                 [styles.neutral]:
                   rating?.ratingDetailsDCFRecommendation === "Neutral",
-                [styles.buy]: rating?.ratingDetailsDCFRecommendation
-                  .toLowerCase()
-                  .includes("buy"),
-                [styles.sell]: rating?.ratingDetailsDCFRecommendation
-                  .toLowerCase()
-                  .includes("sell"),
+                [styles.buy]: rating?.ratingDetailsDCFRecommendation?.toLowerCase().includes("buy"),
+                [styles.sell]: rating?.ratingDetailsDCFRecommendation?.toLowerCase().includes("sell"),
               })}
             >
               {rating?.ratingDetailsDCFRecommendation}
@@ -200,12 +196,8 @@ export const ProfileList = ({ profile, ratios, rating, isLoading, isError }) => 
               className={cn(styles.rating, {
                 [styles.neutral]:
                   rating?.ratingDetailsPERecommendation === "Neutral",
-                [styles.buy]: rating?.ratingDetailsPERecommendation
-                  .toLowerCase()
-                  .includes("buy"),
-                [styles.sell]: rating?.ratingDetailsPERecommendation
-                  .toLowerCase()
-                  .includes("sell"),
+                [styles.buy]: rating?.ratingDetailsPERecommendation?.toLowerCase().includes("buy"),
+                [styles.sell]: rating?.ratingDetailsPERecommendation?.toLowerCase().includes("sell"),
               })}
             >
               {rating?.ratingDetailsPERecommendation}
@@ -217,12 +209,8 @@ export const ProfileList = ({ profile, ratios, rating, isLoading, isError }) => 
               className={cn(styles.rating, {
                 [styles.neutral]:
                   rating?.ratingDetailsPBRecommendation === "Neutral",
-                [styles.buy]: rating?.ratingDetailsPBRecommendation
-                  .toLowerCase()
-                  .includes("buy"),
-                [styles.sell]: rating?.ratingDetailsPBRecommendation
-                  .toLowerCase()
-                  .includes("sell"),
+                [styles.buy]: rating?.ratingDetailsPBRecommendation?.toLowerCase().includes("buy"),
+                [styles.sell]: rating?.ratingDetailsPBRecommendation?.toLowerCase().includes("sell"),
               })}
             >
               {rating?.ratingDetailsPBRecommendation}
@@ -234,12 +222,8 @@ export const ProfileList = ({ profile, ratios, rating, isLoading, isError }) => 
               className={cn(styles.rating, {
                 [styles.neutral]:
                   rating?.ratingDetailsROERecommendation === "Neutral",
-                [styles.buy]: rating?.ratingDetailsROERecommendation
-                  .toLowerCase()
-                  .includes("buy"),
-                [styles.sell]: rating?.ratingDetailsROERecommendation
-                  .toLowerCase()
-                  .includes("sell"),
+                [styles.buy]: rating?.ratingDetailsROERecommendation?.toLowerCase().includes("buy"),
+                [styles.sell]: rating?.ratingDetailsROERecommendation?.toLowerCase().includes("sell"),
               })}
             >
               {rating?.ratingDetailsROERecommendation}
@@ -251,12 +235,8 @@ export const ProfileList = ({ profile, ratios, rating, isLoading, isError }) => 
               className={cn(styles.rating, {
                 [styles.neutral]:
                   rating?.ratingDetailsROARecommendation === "Neutral",
-                [styles.buy]: rating?.ratingDetailsROARecommendation
-                  .toLowerCase()
-                  .includes("buy"),
-                [styles.sell]: rating?.ratingDetailsROARecommendation
-                  .toLowerCase()
-                  .includes("sell"),
+                [styles.buy]: rating?.ratingDetailsROARecommendation?.toLowerCase().includes("buy"),
+                [styles.sell]: rating?.ratingDetailsROARecommendation?.toLowerCase().includes("sell"),
               })}
             >
               {rating?.ratingDetailsROARecommendation}
@@ -268,12 +248,8 @@ export const ProfileList = ({ profile, ratios, rating, isLoading, isError }) => 
               className={cn(styles.finalRating, {
                 [styles.finalNeutral]:
                   rating?.ratingRecommendation === "Neutral",
-                [styles.finalBuy]: rating?.ratingRecommendation
-                  .toLowerCase()
-                  .includes("buy"),
-                [styles.finalSell]: rating?.ratingRecommendation
-                  .toLowerCase()
-                  .includes("sell"),
+                [styles.finalBuy]: rating?.ratingRecommendation?.toLowerCase().includes("buy"),
+                [styles.finalSell]: rating?.ratingRecommendation?.toLowerCase().includes("sell"),
               })}
             >
               {rating?.ratingRecommendation}

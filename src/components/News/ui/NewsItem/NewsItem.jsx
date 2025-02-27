@@ -15,7 +15,7 @@ export const NewsItem = ({ feed }) => {
         </Link>
       </div>
       <div className={styles.newsTickers}>
-        {feed?.ticker_sentiment?.slice(0, 9).map((item, index) => (
+        {feed?.ticker_sentiment?.slice(0, 8).map((item, index) => (
           <Link
             to={`/profile/${item.ticker}`}
             key={index}

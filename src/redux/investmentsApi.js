@@ -24,6 +24,15 @@ export const investmentsApi = createApi({
     }),
     getKeyRatios: build.query({
       query: ({ticker}) => `ratios-ttm/${ticker}?apikey=${investmentsKey}`
+    }),
+    getCompanyRating: build.query({
+      query: ({ticker}) => `rating/${ticker}?apikey=${investmentsKey}`
+    }),
+    getAllSectors: build.query({
+      query: () => `sectors-list?apikey=${investmentsKey}`
+    }),
+    getAllSectorCompanies: build.query({
+      query: ({sector}) => `stock-screener?sector=${sector}&apikey=${investmentsKey}`
     })
   }),
 });
@@ -31,8 +40,11 @@ export const investmentsApi = createApi({
 export const {
   useLazyCompanySearchQuery,
   useLazyGetChartDataQuery,
+  useLazyGetAllSectorCompaniesQuery,
   useGetProfileQuery,
+  useGetCompanyRatingQuery,
+  useGetAllSectorsQuery,
   useGetCurrentQuoteQuery,
-  useGetKeyRatiosQuery
+  useGetKeyRatiosQuery,
 } = investmentsApi;
 

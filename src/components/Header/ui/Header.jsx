@@ -10,7 +10,10 @@ export const Header = () => {
         <Link to={"/"} className={styles.headerLink}>
           Investments
         </Link>
-        <Search />
+        <div className={styles.headerWrapper}>
+          <Search />
+          <Link to={"/market"} className={styles.headerLink}>Market</Link>
+        </div>
         <ThemeSwitcher />
       </div>
     </header>

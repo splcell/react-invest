@@ -1,0 +1,1 @@
+export {InfiniteScrollComponent} from './ui/InfiniteScrollComponent'
